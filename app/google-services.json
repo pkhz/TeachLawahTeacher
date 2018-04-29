@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "1059495160412",
+    "firebase_url": "https://teachlawah4.firebaseio.com",
+    "project_id": "teachlawah4",
+    "storage_bucket": "teachlawah4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059495160412:android:399bf2dca4b59093",
+        "android_client_info": {
+          "package_name": "com.example.idea_pad.teachlawah4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059495160412-vlf87f797q5a8g98qft4143b0refe785.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.idea_pad.teachlawah4",
+            "certificate_hash": "56dc4fa04a59498ad1836c8f1b3250b8a1769ab8"
+          }
+        },
+        {
+          "client_id": "1059495160412-llml5rpfp5nlciq946klgf10alsjb5pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATZUR5C_WQSxGoPeQQ0C_XiTDQHEp27us"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059495160412-llml5rpfp5nlciq946klgf10alsjb5pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059495160412:android:c89780c5a07ea534",
+        "android_client_info": {
+          "package_name": "com.example.idea_pad.teachlawahstudent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059495160412-vev3kdea4cej1cbkv2t5gb86immphlt7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.idea_pad.teachlawahstudent",
+            "certificate_hash": "56dc4fa04a59498ad1836c8f1b3250b8a1769ab8"
+          }
+        },
+        {
+          "client_id": "1059495160412-llml5rpfp5nlciq946klgf10alsjb5pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATZUR5C_WQSxGoPeQQ0C_XiTDQHEp27us"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059495160412-llml5rpfp5nlciq946klgf10alsjb5pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059495160412:android:8a7bed9b3b829db5",
+        "android_client_info": {
+          "package_name": "com.example.idea_pad.teachlawahteacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059495160412-2p2t144t41q1jna9l291e3maqfe7d87v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.idea_pad.teachlawahteacher",
+            "certificate_hash": "56dc4fa04a59498ad1836c8f1b3250b8a1769ab8"
+          }
+        },
+        {
+          "client_id": "1059495160412-llml5rpfp5nlciq946klgf10alsjb5pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATZUR5C_WQSxGoPeQQ0C_XiTDQHEp27us"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059495160412-llml5rpfp5nlciq946klgf10alsjb5pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
