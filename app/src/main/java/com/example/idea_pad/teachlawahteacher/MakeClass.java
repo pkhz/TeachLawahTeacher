@@ -97,7 +97,7 @@ public class MakeClass extends Fragment {
         MakeClassData classData = new MakeClassData(name, venue, time, date, contact);
 
         //change other node here
-        mFirebaseDatabase.child("makeclass").setValue(classData);
+        mFirebaseDatabase.child("makeclass").push().setValue(classData);
 
         //addUserChangeListener();
     }

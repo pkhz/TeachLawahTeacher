@@ -5,11 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_ylects"
+            android:id="@+id/nav_lects"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Make a class" />
         <item
-            android:id="@+id/nav_lects"
+            android:id="@+id/nav_ylects"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Your classes" />
         <item

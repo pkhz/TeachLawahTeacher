@@ -137,7 +137,9 @@ public class Feedback extends Fragment {
         FeedbackData feedb = new FeedbackData(name, feedback);
 
         //change other node here
-        mFirebaseDatabase.child("feedbacks").setValue(feedb);
+        mFirebaseDatabase.child("feedbacks").push().setValue(feedb);
+
+        //whhen retrieve how to get key?/just take child()?
 
         //addUserChangeListener();
     }
