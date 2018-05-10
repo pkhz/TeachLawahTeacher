@@ -4,16 +4,25 @@ package com.example.idea_pad.teachlawahteacher;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 /**
@@ -21,15 +30,20 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class Feedback extends Fragment {
 
+    //model class
+
 
     private static final String TAG = Feedback.class.getSimpleName();
     //private TextView txtDetails; //later
     private EditText inputName, inputFeed;
+    private TextView txtDetails;
     private Button btnSave;
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
 
     private String userId;
+
+    //ArrayList<FeedbackData> fbd=new ArrayList<>();
 
     public Feedback() {
         // Required empty public constructor
@@ -43,12 +57,13 @@ public class Feedback extends Fragment {
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        //txtDetails = (TextView) findViewById(R.id.txt_user);
+
         View v = inflater.inflate(R.layout.fragment_feedback, container, false);
 
         inputName = (EditText) v.findViewById(R.id.name);
         inputFeed = (EditText) v.findViewById(R.id.feedbac);
         btnSave = (Button) v.findViewById(R.id.btn_save);
+        txtDetails = (TextView) v.findViewById(R.id.txt_user);
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
 
@@ -58,16 +73,16 @@ public class Feedback extends Fragment {
         //can it create child().child().....?
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userId = currentFirebaseUser.getUid();
-        mFirebaseDatabase = mFirebaseInstance.getReference(userId);
+        mFirebaseDatabase = mFirebaseInstance.getReference("user - teachers").child(userId);
 
         //get reference to 'feedback' node
         //mFirebaseDatabase2 = mFirebaseInstance.getReference("feedback");
 
         // store app title to 'app_title' node
-        /* mFirebaseInstance.getReference("app_title").setValue("TeachLawahTeacher");
+        //mFirebaseInstance.getReference("app_title").setValue("TeachLawahTeacher");
 
         // app_title change listener
-        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
+        /*mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.e(TAG, "App title updated");
@@ -93,6 +108,9 @@ public class Feedback extends Fragment {
                 String feed = inputFeed.getText().toString();
 
                 createFeedback(name, feed);
+
+
+                //addUserChangeListener();
 
                 //later - toast for submitted
 
@@ -149,27 +167,37 @@ public class Feedback extends Fragment {
      */ /*
     private void addUserChangeListener() {
         // User data change listener
-        mFirebaseDatabase.child(userId).addValueEventListener(new ValueEventListener() {
+        DatabaseReference mFirebaseDatabase2 = mFirebaseDatabase.child(userId).child("feedbacks");
+        mFirebaseDatabase2.orderByChild("name").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FeedbackData fbd = dataSnapshot.getValue(FeedbackData.class);
 
                 // Check for null
-                if (fbd == null) {
-                    Log.e(TAG, "Feedback data is null!");
-                    return;
-                }
+                //if (fbd == null) {
+                    //Log.e(TAG, "Feedback data is null!");
+                    //return;
+                //}
 
                 Log.e(TAG, "Feedback is saved!" + fbd.name + ", " + fbd.feedbacks);
 
                 // Display newly updated name and email
-                txtDetails.setText(user.name + ", " + user.email);
+                txtDetails.setText(fbd.name + ", " + fbd.feedbacks);
+
+                //if(dataSnapshot.child("feedbacks").exists()) {
+                    //String name = dataSnapshot.child("name").getValue(String.class);
+                    //txtDetails.setText(name);
+                    //Log.e(TAG, "Feedback is saved!" + name);
+                            //put value in view;
+                //} else  {
+                    //put 0 in view
+                //}
 
                 // clear edit text
-                inputEmail.setText("");
-                inputName.setText("");
+                //inputEmail.setText("");
+                //inputName.setText("");
 
-                toggleButton();
+                //toggleButton();
             }
 
             @Override
@@ -178,9 +206,9 @@ public class Feedback extends Fragment {
                 Log.e(TAG, "Failed to read user", error.toException());
             }
         });
-    }
+    }*/
 
-    private void updateUser(String name, String feedbacks) {
+    /*private void updateUser(String name, String feedbacks) {
         // updating the user via child nodes
         if (!TextUtils.isEmpty(name))
             mFirebaseDatabase.child(userId).child("name").setValue(name);
@@ -188,6 +216,9 @@ public class Feedback extends Fragment {
         if (!TextUtils.isEmpty(email))
             mFirebaseDatabase.child(userId).child("email").setValue(email);
     }  */
+
+
+
 
 
 }

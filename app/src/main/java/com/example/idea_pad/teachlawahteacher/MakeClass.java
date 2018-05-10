@@ -53,7 +53,7 @@ public class MakeClass extends Fragment {
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userId = currentFirebaseUser.getUid();
-        mFirebaseDatabase = mFirebaseInstance.getReference(userId);
+        mFirebaseDatabase = mFirebaseInstance.getReference("user - teachers").child(userId);;
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
